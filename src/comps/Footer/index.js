@@ -22,18 +22,21 @@ align-items:center;
         height: 28px;
         position:relative;
         right:100px;
+        cursor: pointer;
     }
 
     .upload {
         width: 28px;
         height: 28px;
+        cursor: pointer;
     }
 
     .profile {
-        width: 34px;
-        height: 34px;
+        width: 35px;
+        height: 35px;
         position:relative;
         left:100px;
+        cursor: pointer;
     }
 
 `;

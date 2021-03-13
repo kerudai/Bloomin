@@ -7,7 +7,6 @@ max-width:290px;
 min-height:90px;
 max-height:90px;
 margin-top:10px;
-// margin-left:5px;
 margin-bottom:20px;
 `;
 
@@ -34,8 +33,8 @@ font-weight: normal;
 font-size: 18px;
 line-height: 20px;
 color: #727272;
-padding-left:10px;
-
+text-indent: 10px;
+outline: transparent;
 `;
 
 const Input = ({inputhead,placeholder, width, color}) => {

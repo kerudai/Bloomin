@@ -22,8 +22,7 @@ function App() {
       {/* <Register /> */}
 
       {/* <Profile /> */}
-
-      <Posting />
+      <Profile />
 
     </div>
   );
