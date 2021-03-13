@@ -4,6 +4,8 @@ import Avatar from '../Avatar';
 import pencilimg from '../../images/pencil.svg';
 
 const Container = styled.div`
+  margin-top: 20px;
+  margin-left: 15px;
 `;
 
 const Pencil = styled.img`

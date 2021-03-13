@@ -6,6 +6,7 @@ import Login from 'pages/Login';
 import Register from 'pages/Register';
 import Profile from 'pages/Profile';
 import Posting from 'pages/Posting';
+import ProfileEdit from 'pages/ProfileEdit';
 
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
       {/* <Register /> */}
 
       {/* <Profile /> */}
-      <Profile />
+      <ProfileEdit />
 
     </div>
   );
