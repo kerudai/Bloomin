@@ -1,10 +1,10 @@
 import './App.scss';
-import Main from 'pages/main';
+import Login from 'pages/Login';
 
 function App() {
   return (
     <div className="App">
-      <Main />
+      <Login />
     </div>
   );
 }
