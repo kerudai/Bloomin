@@ -5,14 +5,14 @@ const Container = styled.div`
 
 `;
 
-const Button = ({}) => {
+const Icon = ({}) => {
   return <Container>
-      
+
   </Container>
 }
 
-Button.defaultProps = {
+Icon.defaultProps = {
 
 }
 
-export default Button;
+export default Icon;
