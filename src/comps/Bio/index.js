@@ -5,8 +5,8 @@ import leaficon from '../../images/small_leaf.png';
 
 const BioCont = styled.div`
 color: #000000;
-min-width:217px;
-max-width:217px;
+min-width:250px;
+max-width:250px;
 `;
 
 const BioName = styled.div`
@@ -68,7 +68,7 @@ const Bio = ({name, id, desc, fav}) => {
 Bio.defaultProps = {
     name: "Linda Jones",
     id: "@linda2256",
-    desc: "Plants amke me happy. Join me on my plant-loving journey",
+    desc: "Plants make me happy. Join me on my plant-loving journey. 😊🌱",
     fav: "Tulips"
 }
 

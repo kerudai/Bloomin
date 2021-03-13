@@ -26,6 +26,7 @@ align-items:center;
         height: 30px;
         position:relative;
         right:120px;
+        cursor: pointer;
     }
 
     .setting{
@@ -33,6 +34,7 @@ align-items:center;
         height: 30px;
         position:relative;
         left:120px;
+        cursor: pointer;
     }
 
 `;

@@ -13,7 +13,8 @@ const Register = () => {
       height:30,
       position:"relative",
       marginTop:30,
-      marginLeft:-10
+      marginLeft:-10,
+      cursor: "pointer"
     }}/>
     <div className="InputCont" style={{
       display:"flex",
