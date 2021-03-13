@@ -7,7 +7,7 @@ const Container = styled.div`
 `;
 
 const Head = styled.div`
-  font-size: 36px;
+  font-size: 30pt;
   margin-bottom: 5px;
 `;
 
