@@ -1,20 +1,26 @@
 import './App.scss';
 
-import Main from 'pages/main';
+// import Main from 'pages/main';
 import Post from '../src/comps/Post';
 import Login from 'pages/Login';
+import Register from 'pages/Register';
+import Profile from 'pages/Profile';
 
 
 function App() {
   return (
     <div className="App">
 
-      <Main />
+      {/* <Main /> */}
 
       {/* Kaye's Comps */}
-      <Post />
+      {/* <Post />
     
-      <Login />
+      <Login /> */}
+
+      {/* <Register /> */}
+      
+      <Profile />
 
     </div>
   );
