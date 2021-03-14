@@ -1,5 +1,4 @@
 import './App.scss';
-
 // import Main from 'pages/main';
 // import Post from '../src/comps/Post';
 import Login from 'pages/Login';
@@ -12,6 +11,7 @@ import ProfileEdit from 'pages/ProfileEdit';
 function App() {
   return (
     <div className="App">
+
 
       {/* <Main /> */}
 
