@@ -7,21 +7,36 @@ import Input from 'comps/Input';
 import Button from 'comps/Button';
 
 const Container = styled.div`
-display: flex;
-flex-direction: column;
-align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const Name = styled.div`
-width: 295px;
-display: flex;
-justify-content: space-between;
+  width: 295px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+`;
+
+const Text = styled.div`
+  width: 90%;
+  cursor: pointer;
+  text-align: right;
+  margin-top: 20px;
+  font-size: 18px;
+  text-transform: uppercase;
+
+  &:hover {
+    color: #6d8a6d;
+  }
 `;
 
 const ProfileEdit = () => {
 
   return <Container>
     <Tophead/>
+    <Text>Logout</Text>
     <EditAvatar/>
     <Name>
       <Input inputhead="First Name" placeholder="First Name" width="130px"/>
@@ -31,7 +46,9 @@ const ProfileEdit = () => {
     <Input inputhead="Favorite Plant" placeholder="Favorite Plant"/>
     <Input inputhead="Password" placeholder="Password"/>
     <Input inputhead="Email" placeholder="Email"/>
+    <Input inputhead="Username" placeholder="Username"/>
     <Button buttontext="Save changes"/>
+    <br/>
     <Footer/>
   </Container>
 }
