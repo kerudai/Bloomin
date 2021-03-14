@@ -31,6 +31,7 @@ const Register = () => {
       <Input inputhead="Last Name" placeholder="Last Name"/>
       <Input inputhead="Email" placeholder="Email"/>
       <Input inputhead="Password" placeholder="Password"/>
+      <Input inputhead="Username" placeholder="Username"/>
 
       <div className="birthday" style={{
         display:"flex",
