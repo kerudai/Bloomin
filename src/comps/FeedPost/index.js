@@ -1,5 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import Icon from 'comps/Icon';
+import Comment from 'comps/Comment';
+import Like from 'comps/Like';
 
 const Container = styled.div`
 display: flex;
@@ -28,6 +31,7 @@ justify-content:space-between;
 align-items:center;
 width: 100%;
 font-size:12px;
+margin:10px;
 `;
 
 const Photo = styled.img`
@@ -38,6 +42,8 @@ height:252px;
 const Description = styled.div`
 font-size:12px;
 margin-top:7px;
+align-items:flex-start;
+justify-content:flex-start;
 `;
 
 const BottomSection = styled.div`
@@ -55,22 +61,22 @@ const Comments = styled.div`
 `;
 
 
-const FeedPost = ({date, desc, likes, comments}) => {
+const FeedPost = ({date, desc, img}) => {
     return <Container>
 
         <Box>
         <TopSection>
-        <p>icon comp here</p>
+        <Icon />
         {date}
         </TopSection>
 
-        <Photo />
+        <Photo src={img} />
         
         <Description>{desc}</Description>
 
         <BottomSection>
-            <Likes>Comp {likes}</Likes>
-            <Comments>Comp {comments}</Comments>
+            <Like />
+            <Comment />
         </BottomSection>
         </Box>
 
@@ -80,8 +86,7 @@ const FeedPost = ({date, desc, likes, comments}) => {
 FeedPost.defaultProps ={
 date: "00/00/2021",
 desc: "this is a description",
-likes: "00",
-comments: "00",
+img: null
 }
 
 export default FeedPost;
