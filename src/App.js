@@ -1,7 +1,6 @@
 import './App.scss';
-
-import Main from 'pages/main';
 import Post from '../src/comps/Post';
+import FeedPost from '../src/comps/FeedPost';
 import Login from 'pages/Login';
 
 
@@ -9,12 +8,13 @@ function App() {
   return (
     <div className="App">
 
-      <Main />
+     
 
       {/* Kaye's Comps */}
       <Post />
-    
-      <Login />
+      <FeedPost />
+      
+      {/* <Login /> */}
 
     </div>
   );
