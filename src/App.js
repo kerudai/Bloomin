@@ -23,7 +23,7 @@ function App() {
       {/* <Register /> */}
 
       {/* <Profile /> */}
-      <ProfileEdit />
+      <Login />
 
     </div>
   );
