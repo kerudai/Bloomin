@@ -1,6 +1,8 @@
 import './App.scss';
-// import Main from 'pages/main';
-// import Post from '../src/comps/Post';
+import Post from '../src/comps/Post';
+import FeedPost from '../src/comps/FeedPost';
+import Like from '../src/comps/Like';
+import Comment from './comps/Comment';
 import Login from 'pages/Login';
 import Register from 'pages/Register';
 import Profile from 'pages/Profile';
@@ -14,9 +16,6 @@ function App() {
 
 
       {/* <Main /> */}
-
-      {/* Kaye's Comps */}
-      {/* <Post /> */}
     
       {/* <Login /> */}
 

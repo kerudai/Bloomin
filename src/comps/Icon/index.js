@@ -17,7 +17,7 @@ const Username = styled.div`
 
 const Icon = ({ onClick , username }) => {
   return <Container onClick={onClick}>
-    <Avatar border="none" width="40px" height="40px" />
+    <Avatar border="none" width="30px" height="30px" />
     <Username>{username}</Username>
   </Container>
 }
