@@ -11,9 +11,10 @@ const Text = styled.div`
     text-align: center;
     margin-top: 20px;
     font-size: 18px;
+    text-transform: uppercase;
 
     &:hover {
-        color: #6d8a6d;
+      color: #6d8a6d;
     }
 `;
 
@@ -23,7 +24,7 @@ const Login = ({createAccount}) => {
     <Input inputhead="Email" placeholder="Email"/>
     <Input inputhead="Password" placeholder="Password"/>
     <Button buttontext="Log in"/>
-    <Text onClick={createAccount}>CREATE ACCOUNT</Text>
+    <Text onClick={createAccount}>Create Account</Text>
   </Container>
 }
 
