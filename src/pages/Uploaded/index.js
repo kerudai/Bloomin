@@ -8,8 +8,8 @@ import P_selectd from 'comps/P_selected';
 import Button from 'comps/Button';
 
 const Container = styled.div`
-padding-top: 85px;
-padding-bottom: 85px;
+// padding-top: 85px;
+// padding-bottom: 85px;
 `;
 
 const Uploaded = () => {

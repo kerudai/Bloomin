@@ -6,7 +6,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
-padding-top: 75px;
+// padding-top: 75px;
 background-color: #F5F5F5;
 `;
 
