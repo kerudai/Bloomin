@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import LikeButton from 'comps/LikeButton';
 
 
 const LikeB = styled.button`
@@ -32,7 +33,7 @@ class Like extends React.Component {
 
     render() {
         return <LikeB onClick ={this.addLike}> 
-        <Heart src="/EmptyLike.png" /> {this.state.likes}
+        <LikeButton /> {this.state.likes}
         </LikeB>
     }
 }
