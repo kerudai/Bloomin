@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-
+import {Link} from 'react-router-dom';
 
 import homeicon from '../../images/home.png';
 import uploadicon from '../../images/upload.png';
@@ -47,9 +47,9 @@ align-items:center;
 
 const Footer = ({}) => {
   return <FooterCont>
-  <img src={homeicon} className="home"/>
-  <img src={uploadicon} className="upload"/>
-  <img src={profileicon} className="profile"/>
+  <Link to="/Feed" style={{ textDecoration: 'none'}}><img src={homeicon} className="home"/></Link>
+  <Link to="/Posting" style={{ textDecoration: 'none'}}><img src={uploadicon} className="upload"/></Link>
+  <Link to="/Profile" style={{ textDecoration: 'none'}}><img src={profileicon} className="profile"/></Link>
 </FooterCont>
 }
 

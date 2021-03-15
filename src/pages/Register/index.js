@@ -4,18 +4,19 @@ import React, { useState, useEffect } from 'react';
 import Input from '../../comps/Input';
 import backIcon from 'images/back.png';
 import './register.scss';
+import {Link} from 'react-router-dom';
 
 const Register = () => {
 
   return <div className="registerCont" style={{paddingBottom:30}}>
-    <img src={backIcon} style={{
+    <Link to="/" style={{ textDecoration: 'none'}}><img src={backIcon} style={{
       width:30,
       height:30,
       position:"relative",
       marginTop:30,
       marginLeft:-10,
       cursor: "pointer"
-    }}/>
+    }}/></Link>
     <div className="InputCont" style={{
       display:"flex",
       flexDirection:"column",
@@ -48,7 +49,7 @@ const Register = () => {
         
       </div>
       <Input inputhead="What's Your Favorite Plant?" placeholder="Favorite plant"/>
-      <Button buttontext="CREATE ACCOUNT"/>
+      <Link to="/Feed" style={{ textDecoration: 'none'}}><Button buttontext="CREATE ACCOUNT"/></Link>
     </div>
   </div>
 }

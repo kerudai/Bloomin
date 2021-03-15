@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 import Button from 'comps/Button';
 import Input from 'comps/Input';
@@ -18,6 +19,7 @@ const Text = styled.div`
     margin-top: 20px;
     font-size: 18px;
     text-transform: uppercase;
+    text-decoration: none;
 
     &:hover {
       color: #6d8a6d;
@@ -30,8 +32,8 @@ const Login = ({createAccount}) => {
     <Logo/>
     <Input inputhead="Email" placeholder="Email"/>
     <Input inputhead="Password" placeholder="Password"/>
-    <Button buttontext="Log in"/>
-    <Text onClick={createAccount}>Create Account</Text>
+    <Link to="/Feed" style={{ textDecoration: 'none'}}><Button buttontext="Log in"/></Link>
+    <Link to="/Register" style={{ textDecoration: 'none', color: '#000000' }} ><Text onClick={createAccount}>Create Account</Text></Link>
   </Container>
 }
 

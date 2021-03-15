@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import { Link, useHistory } from 'react-router-dom';
 
 import logo from '../../images/headerlogo.png';
 import backicon from '../../images/back.png';
@@ -12,6 +13,7 @@ min-height:75px;
 max-height:75px;
 background: #97C2A8;
 position: absolute;
+z-index: 1;
 top: 0;
 left: 0;
 display:flex;
@@ -42,12 +44,19 @@ align-items:center;
 
 `;
 
-const Tophead = ({}) => {
-  return <TopHeadCont>
-      <img src={backicon} className="back"/>
-      <img src={logo} className="headerlogo"/>
-      <img src={setting} className="setting"/>
-  </TopHeadCont>
+const Tophead = ({ }) => {
+
+    const history = useHistory()
+
+    const goBack = () => {
+        history.goBack()
+    }
+
+    return <TopHeadCont>
+        <img src={backicon} className="back" onClick={goBack} />
+        <img src={logo} className="headerlogo" />
+        <Link to="/ProfileEdit" style={{ textDecoration: 'none'}}><img src={setting} className="setting" /></Link>
+    </TopHeadCont>
 }
 
 Tophead.defaultProps = {

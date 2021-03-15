@@ -5,6 +5,7 @@ import Tophead from 'comps/Tophead';
 import EditAvatar from 'comps/EditAvatar';
 import Input from 'comps/Input';
 import Button from 'comps/Button';
+import {Link} from 'react-router-dom';
 
 const Container = styled.div`
   display: flex;
@@ -37,7 +38,7 @@ const ProfileEdit = () => {
 
   return <Container>
     <Tophead/>
-    <Text>Logout</Text>
+    <Link to="/" style={{ textDecoration: 'none', color: '#000000', position: 'relative', right: '-110px'}}><Text>Logout</Text></Link>
     <EditAvatar/>
     <Name>
       <Input inputhead="First Name" placeholder="First Name" width="130px"/>
@@ -48,7 +49,7 @@ const ProfileEdit = () => {
     <Input inputhead="Password" placeholder="Password"/>
     <Input inputhead="Email" placeholder="Email"/>
     <Input inputhead="Username" placeholder="Username"/>
-    <Button buttontext="Save changes"/>
+    <Link to="/Profile" style={{ textDecoration: 'none'}}><Button buttontext="Save changes"/></Link>
     <br/>
     <Footer/>
   </Container>
