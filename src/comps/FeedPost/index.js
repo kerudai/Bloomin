@@ -54,12 +54,6 @@ font-size:12px;
 margin:15px;
 `;
 
-const Likes = styled.div`
-`;
-
-const Comments = styled.div`
-`;
-
 
 const FeedPost = ({date, desc, img}) => {
     return <Container>
