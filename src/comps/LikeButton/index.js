@@ -30,7 +30,7 @@ class LikeButton extends React.Component {
     }; 
     render() { 
       return ( 
-        <div className="container"> 
+        <Container>
           
             <div 
               className="container"
@@ -44,7 +44,7 @@ class LikeButton extends React.Component {
               )} 
             </div> 
 
-        </div> 
+    </Container>
       ); 
     } 
   }
