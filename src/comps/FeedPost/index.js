@@ -10,7 +10,8 @@ align-items: center;
 justify-content: center;
 flex-direction:column;
 width: 350px;
-height: 395px;
+min-height: 100px;
+max-height: 395px;
 border-radius:10px;
 background-color: #fff;
 box-shadow: 1px 1px 10px #C4C4C4;
@@ -19,6 +20,7 @@ margin: 10px;
 `;
 
 const Box = styled.div`
+width: 300px;
 display: flex;
 align-items: center;
 justify-content: center;
@@ -44,6 +46,8 @@ font-size:12px;
 margin-top:7px;
 align-items:flex-start;
 justify-content:flex-start;
+flex-direction: row;
+width: 275px;
 `;
 
 const BottomSection = styled.div`
@@ -64,9 +68,9 @@ const FeedPost = ({date, desc, img}) => {
         {date}
         </TopSection>
 
-        <Photo src={img} />
+        {/* <Photo src={img} /> */}
         
-        <Description>{desc}</Description>
+        <Description> {desc} </Description>
 
         <BottomSection>
             <Like />
