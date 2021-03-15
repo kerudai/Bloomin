@@ -7,6 +7,7 @@ const BioCont = styled.div`
 color: #000000;
 min-width:250px;
 max-width:250px;
+margin-left: 20px;
 `;
 
 const BioName = styled.div`

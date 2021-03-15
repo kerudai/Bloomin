@@ -7,7 +7,7 @@ import './register.scss';
 
 const Register = () => {
 
-  return <div className="registerCont">
+  return <div className="registerCont" style={{paddingBottom:30}}>
     <img src={backIcon} style={{
       width:30,
       height:30,
@@ -36,8 +36,7 @@ const Register = () => {
       <div className="birthday" style={{
         display:"flex",
         alignContent:"baseline",
-        marginBottom:20,
-        marginLeft:10
+        marginBottom:20
       }}>
 
         <div className="birthdayInput"><Input inputhead="Birthday" placeholder="MM" width="60px"/><div className="birthdayText">MM</div></div>

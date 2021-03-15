@@ -6,7 +6,9 @@ import Login from 'pages/Login';
 import Register from 'pages/Register';
 import Profile from 'pages/Profile';
 import Posting from 'pages/Posting';
+import Feed from 'pages/Feed';
 import ProfileEdit from 'pages/ProfileEdit';
+import Uploaded from 'pages/Uploaded';
 
 
 function App() {
@@ -23,7 +25,7 @@ function App() {
       {/* <Register /> */}
 
       {/* <Profile /> */}
-      <Login />
+      <Uploaded/>
 
     </div>
   );
