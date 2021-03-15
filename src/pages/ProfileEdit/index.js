@@ -10,6 +10,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 75px;
 `;
 
 const Name = styled.div`
@@ -23,7 +24,7 @@ const Text = styled.div`
   width: 90%;
   cursor: pointer;
   text-align: right;
-  margin-top: 20px;
+  margin-top: 95px;
   font-size: 18px;
   text-transform: uppercase;
 

@@ -6,7 +6,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
-position: relative;
+padding-top: 75px;
 `;
 
 const UserBio = styled.div`

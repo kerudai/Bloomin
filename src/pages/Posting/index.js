@@ -19,7 +19,7 @@ const Posting = () => {
     }}>
       <div style={{
         marginBottom:30,
-        marginTop:50
+        marginTop:100
       }}><Header headtext="What's Bloomin'?"/></div>
       <Post />
       <div style={{
@@ -28,10 +28,7 @@ const Posting = () => {
         <Button buttontext="POST"/>
       </div>
     </div>
-    <div style={{
-      position:"absolute",
-      top:823
-    }}><Footer /></div>
+    <Footer />
   </div>
 }
 
