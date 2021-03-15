@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Footer from 'comps/Footer';
 import Tophead from 'comps/Tophead';
+import FeedPost from 'comps/FeedPost';
+
 
 const Container = styled.div`
 // padding-top: 85px;
@@ -13,7 +15,9 @@ const Feed = () => {
 
   return <Container>
     <Tophead/>
-    
+    <div className="feed">
+    <FeedPost />
+    </div>
     <Footer/>
   </Container>
 }
