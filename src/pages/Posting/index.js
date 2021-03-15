@@ -5,11 +5,11 @@ import Post from 'comps/Post';
 import Tophead from 'comps/Tophead';
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-
+import './posting.scss';
 
 const Posting = () => {
 
-  return <div>
+  return <div className="posting">
     <Tophead/>
     <div style={{
       display:"flex",

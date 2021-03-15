@@ -7,6 +7,7 @@ import styled from 'styled-components';
 
 const Container = styled.div`
 padding-top: 75px;
+background-color: #F5F5F5;
 `;
 
 const UserBio = styled.div`
