@@ -6,6 +6,7 @@ import Tophead from 'comps/Tophead';
 const Container = styled.div`
 padding-top: 85px;
 padding-bottom: 85px;
+background-color: #F5F5F5;
 `;
 
 const Uploaded = () => {
