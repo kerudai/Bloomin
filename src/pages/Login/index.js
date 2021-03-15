@@ -11,6 +11,7 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
+background-color: #F5F5F5;
 `;
 
 const Text = styled.div`

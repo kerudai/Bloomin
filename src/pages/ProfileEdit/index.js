@@ -12,6 +12,7 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   padding-bottom: 75px;
+  background-color: #F5F5F5;
 `;
 
 const Name = styled.div`
