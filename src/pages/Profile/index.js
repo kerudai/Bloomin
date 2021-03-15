@@ -4,6 +4,7 @@ import Tophead from 'comps/Tophead';
 import Avatar from 'comps/Avatar';
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import FeedPost from 'comps/FeedPost';
 
 const Container = styled.div`
 // padding-top: 75px;
@@ -22,10 +23,14 @@ const Profile = () => {
 
   return <Container>
     <Tophead />
+    <div className="profile">
     <UserBio>
       <Avatar/>
       <Bio />
     </UserBio>
+    <FeedPost />
+    <FeedPost />
+    </div>
     <Footer />
   </Container>
 }

@@ -1,36 +1,40 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Container = styled.div`
-display:flex;
-flex-direction: row;
+
+const LikeB = styled.button`
+border: none;
+background: none;
+display: flex;
 align-items: center;
 justify-content: center;
+font-size:12px;
 `;
 
 const Heart = styled.img`
 cursor: pointer;
 margin: 5px;
-height:15px;
+height: 15px;
 `;
 
-// function likePost(){
-//     if(true){
-        
-//     }
-// }
+class Like extends React.Component {
 
-const Like = ({likes}) => {
-    return <Container>
-        <Heart src="/EmptyLike.png"  
-        // onClick={()=>{ likePost(); }}
-        />
-        {likes}
-    </Container>
-}
+    state = {
+        likes: 0
+    };
 
-Like.defaultProps ={
-likes: "00",
+    addLike = () => {
+        let newCount = this.state.likes + 1;
+        this.setState({
+            likes: newCount
+        });
+    };
+
+    render() {
+        return <LikeB onClick ={this.addLike}> 
+        <Heart src="/EmptyLike.png" /> {this.state.likes}
+        </LikeB>
+    }
 }
 
 export default Like;
