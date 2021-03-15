@@ -12,7 +12,7 @@ max-width:414px;
 min-height:75px;
 max-height:75px;
 background: #97C2A8;
-position: absolute;
+position: relative;
 z-index: 1;
 top: 0;
 left: 0;
