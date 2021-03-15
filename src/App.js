@@ -1,7 +1,6 @@
+import React from 'react';
+import {BrowserRouter as Router, Switch, Route,} from "react-router-dom"; 
 import './App.scss';
-
-// import Main from 'pages/main';
-// import Post from '../src/comps/Post';
 import Login from 'pages/Login';
 import Register from 'pages/Register';
 import Profile from 'pages/Profile';
@@ -14,19 +13,17 @@ import Uploaded from 'pages/Uploaded';
 function App() {
   return (
     <div className="App">
-
-      {/* <Main /> */}
-
-      {/* Kaye's Comps */}
-      {/* <Post /> */}
-    
-      {/* <Login /> */}
-
-      {/* <Register /> */}
-
-      {/* <Profile /> */}
-      <Uploaded/>
-
+      <Router>
+        <Switch>
+          <Route path="/" exact component={Login} />
+          <Route path="/Register" component={Register} />
+          <Route path="/Feed" component={Feed} />
+          <Route path="/Profile" component={Profile} />
+          <Route path="/ProfileEdit" component={ProfileEdit} />
+          <Route path="/Posting" component={Posting} />
+          <Route path="/Uploaded" component={Uploaded} />
+        </Switch>
+      </Router>
     </div>
   );
 }
