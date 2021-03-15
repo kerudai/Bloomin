@@ -11,6 +11,7 @@ border-radius:10px;
 background-color: #fff;
 box-shadow: 1px 1px 10px #C4C4C4;
 color: black;
+margin: 10px;
 `;
 
 const Border = styled.div`
@@ -26,7 +27,7 @@ color: black;
 const Input = styled.input`
 border: none;
 width:90%;
-height: 5px;
+height: 10px;
 padding: 10px;
 margin:10px;
 color: black;
@@ -36,7 +37,7 @@ const Photo = styled.img`
 cursor: pointer;
 width: 15px;
 height: 15px;
-position: fixed;
+position: absolute;
 margin-top:290px;
 margin-left:270px;
 `;
