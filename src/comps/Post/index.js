@@ -37,9 +37,9 @@ const Photo = styled.img`
 cursor: pointer;
 width: 15px;
 height: 15px;
-position: absolute;
+position: relative;
 margin-top:290px;
-margin-left:270px;
+right: 10px;
 `;
 
 // function addPohto(){
