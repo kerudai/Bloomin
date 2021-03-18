@@ -1,20 +1,41 @@
 const express = require('express') 
-const database = require('./database.js')
+const database = require('./mysqlDatabase')
 
 const app = express() 
 app.use(express.json())
 
-app.get('/api/tasks/', (req, res) => {
-    const tasks = database.allTasks()
-    res.send({
-      tasks: tasks
-    })
+app.get('/api/tasks', (req, res) => {
+  // 1
+  database.allTasks((error, users) => {
+    // 2
+    if (error) {
+      res.send({error})
+      return
+    }
+    // 3
+    res.send({users})
+  })
 })
-  
+
 app.post('/api/tasks', (req, res) => {
-const task = database.createTask(req.body)
-res.send(task) 
+  const user = req.body
+  // 1
+  database.createTask(user, (error, userId) => {
+    
+    // 2
+    if (error) {
+      res.send({error})
+      return
+    }
+
+    // 3
+    user.id = userId
+
+    // 4
+    res.send({user})
+  })
 })
+
 
 app.delete('/api/tasks/:id', (req, res) => {
 const taskId = parseInt(req.params.id)
