@@ -17,24 +17,24 @@ app.get('/api/tasks', (req, res) => {
   })
 })
 
-app.post('/api/tasks', (req, res) => {
-  const user = req.body
-  // 1
-  database.createTask(user, (error, userId) => {
+// app.post('/api/tasks', (req, res) => {
+//   const user = req.body
+//   // 1
+//   database.createTask(user, (error, userId) => {
     
-    // 2
-    if (error) {
-      res.send({error})
-      return
-    }
+//     // 2
+//     if (error) {
+//       res.send({error})
+//       return
+//     }
 
-    // 3
-    user.id = userId
+//     // 3
+//     user.id = userId
 
-    // 4
-    res.send({user})
-  })
-})
+//     // 4
+//     res.send({user})
+//   })
+// })
 
 
 app.delete('/api/tasks/:id', (req, res) => {
