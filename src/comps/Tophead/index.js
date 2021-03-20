@@ -7,15 +7,14 @@ import backicon from '../../images/back.png';
 import setting from '../../images/setting.png';
 
 const TopHeadCont = styled.div`
-min-width:414px;
-max-width:414px;
+min-width: 100vw;
+max-width: 100vw;
 min-height:75px;
 max-height:75px;
 background: #97C2A8;
-position: relative;
+position: fixed;
 z-index: 1;
 top: 0;
-left: 0;
 display:flex;
 flex-direction:row;
 justify-content:center;
