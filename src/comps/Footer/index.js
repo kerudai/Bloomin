@@ -7,18 +7,18 @@ import uploadicon from '../../images/upload.png';
 import profileicon from '../../images/user1.png';
 
 const FooterCont = styled.div`
-min-width:414px;
-max-width:414px;
+min-width:100vw;
+max-width: 100vw;
 min-height:75px;
 max-height:75px;
 background: #97C2A8;
-position: relative;
-// bottom: 168px;
-left: 0;
+position: fixed;
+bottom: 0;
 display:flex;
 flex-direction:row;
 justify-content:center;
 align-items:center;
+margin-top: 10px;
 
     .home {
         width: 28px;

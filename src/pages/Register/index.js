@@ -8,14 +8,14 @@ import {Link} from 'react-router-dom';
 
 const Register = () => {
 
-  return <div className="registerCont" style={{paddingBottom:30}}>
+  return <div className="registerCont">
     <Link to="/" style={{ textDecoration: 'none'}}><img src={backIcon} style={{
       width:30,
       height:30,
-      position:"relative",
+      position:"fixed",
       marginTop:30,
-      marginLeft:-10,
-      cursor: "pointer"
+      marginLeft:20,
+      cursor: "pointer",
     }}/></Link>
     <div className="InputCont" style={{
       display:"flex",
@@ -24,7 +24,7 @@ const Register = () => {
     }}>
       <div className="RegisterHeadText" style={{
         marginBottom:20,
-        marginTop:-20
+        marginTop:10
       }}>
         <Header headtext="Register"/>
       </div>

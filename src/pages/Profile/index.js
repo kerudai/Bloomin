@@ -5,10 +5,15 @@ import Avatar from 'comps/Avatar';
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import FeedPost from 'comps/FeedPost';
+import Spacer from 'comps/Spacer';
 
 const Container = styled.div`
 // padding-top: 75px;
 background-color: #F5F5F5;
+min-height: 100vh;
+max-height: 100vh;
+min-width: 100vw;
+max-width: 100vw;
 `;
 
 const UserBio = styled.div`
@@ -23,6 +28,7 @@ const Profile = () => {
 
   return <Container>
     <Tophead />
+    <Spacer/>
     <div className="profile">
     <UserBio>
       <Avatar/>
