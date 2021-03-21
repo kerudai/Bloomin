@@ -4,7 +4,23 @@ import Footer from 'comps/Footer';
 import Tophead from 'comps/Tophead';
 import FeedPost from 'comps/FeedPost';
 import Spacer from 'comps/Spacer';
+import Button from 'comps/Button';
 
+import axios from 'axios';
+
+const [posts, setPosts] = useState([])
+const HandleGetAllPosts = async (keyword, name) => {
+  
+  var resp = await axios.post("heroku link here", {
+  token:"secrettoken",
+  keyword:keyword,
+  name:name
+});
+
+console.log(resp);
+setPosts([...resp.date]);
+
+}
 
 const Container = styled.div`
 // padding-top: 85px;
@@ -22,7 +38,22 @@ const Feed = () => {
     <Tophead/>
     <Spacer/>
     <div className="feed">
-    <FeedPost boxshadow="1px 1px 10px #C4C4C4"/>
+
+    <Button buttontext="Get All Posts" onClick={HandleGetAllPosts} />
+    
+    {
+    posts.map((o, i)=>{
+      console.log("inside the array...", o,i);
+
+    <FeedPost 
+    date={o.date}
+    desc={o.description} 
+    img={o.image}
+    comments={o.comments}
+    />
+  })
+  }
+
     </div>
     <Spacer/>
     <Footer/>
