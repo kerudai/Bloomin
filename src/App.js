@@ -8,6 +8,7 @@ import Posting from 'pages/Posting';
 import Feed from 'pages/Feed';
 import ProfileEdit from 'pages/ProfileEdit';
 import Uploaded from 'pages/Uploaded';
+import ViewComments from 'pages/ViewComments';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path="/ProfileEdit" component={ProfileEdit} />
           <Route path="/Posting" component={Posting} />
           <Route path="/Uploaded" component={Uploaded} />
+          <Route path="/ViewComments" component={ViewComments} />
         </Switch>
       </Router>
     </div>
