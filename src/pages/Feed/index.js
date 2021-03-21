@@ -22,7 +22,7 @@ const Feed = () => {
     <Tophead/>
     <Spacer/>
     <div className="feed">
-    <FeedPost />
+    <FeedPost boxshadow="1px 1px 10px #C4C4C4"/>
     </div>
     <Spacer/>
     <Footer/>

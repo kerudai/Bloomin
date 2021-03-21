@@ -13,9 +13,17 @@ min-height: 100vh;
 max-height: 100vh;
 min-width: 100vw;
 max-width: 100vw;
+`;
+
+const Content = styled.div`
 display: flex;
-flex-direction: column;
 align-items: center;
+justify-content: center;
+flex-direction:column;
+border-radius:10px;
+width: 350px;
+background-color: #fff;
+box-shadow: 1px 1px 10px #C4C4C4;
 `;
 
 
@@ -24,9 +32,12 @@ const ViewComments = () => {
     <Tophead />
     <Spacer />
     <div className="viewcom">
+    <Content>
     <FeedPost />
     <CommentInput />
     <UserComment />
+    <UserComment />
+    </Content>
     </div>
     <Spacer />
     <Footer />

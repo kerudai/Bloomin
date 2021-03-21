@@ -14,7 +14,8 @@ min-height: 100px;
 max-height: 395px;
 border-radius:10px;
 background-color: #fff;
-box-shadow: 1px 1px 10px #C4C4C4;
+// box-shadow: 1px 1px 10px #C4C4C4;
+box-shadow:  ${props => props.boxshadow ? props.boxshadow : ""};
 color: black;
 margin: 10px;
 `;
@@ -59,8 +60,8 @@ margin:15px;
 `;
 
 
-const FeedPost = ({date, desc, img}) => {
-    return <Container>
+const FeedPost = ({date, desc, img, boxshadow}) => {
+    return <Container boxshadow = {boxshadow}>
 
         <Box>
         <TopSection>
@@ -68,7 +69,7 @@ const FeedPost = ({date, desc, img}) => {
         {date}
         </TopSection>
 
-        {/* <Photo src={img} /> */}
+        <Photo src={img} />
         
         <Description> {desc} </Description>
 
@@ -84,7 +85,8 @@ const FeedPost = ({date, desc, img}) => {
 FeedPost.defaultProps ={
 date: "00/00/2021",
 desc: "this is a description",
-img: null
+img: null,
+boxshadow: "",
 }
 
 export default FeedPost;

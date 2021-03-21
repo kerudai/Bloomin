@@ -16,16 +16,17 @@ const TopSection = styled.div`
 display: flex;
 flex-direction: row;
 align-items: center;
-width: 350px;
+width: 300px;
 justify-content: space-between;
 `;
 
 const BottomSection  = styled.div`
 display: flex;
 flex-direction: row;
-width: 350px;
+width: 300px;
 align-items:flex-start;
 justify-content: flex-start;
+margin: 10px;
 `;
 
 const UserComment = ({date, comment}) => {
