@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import Icon from 'comps/Icon';
-import Comment from 'comps/Comment';
 import Like from 'comps/Like';
+import { Link, useHistory } from 'react-router-dom';
 
 const Container = styled.div`
 display: flex;
@@ -59,8 +59,21 @@ font-size:12px;
 margin:15px;
 `;
 
+const Comment = styled.div`
+display: flex;
+align-items: center;
+justify-content: center;
+`;
 
-const FeedPost = ({date, desc, img, boxshadow}) => {
+const CommentIcon = styled.img`
+cursor: pointer;
+margin:5px;
+height:15px;
+`;
+
+
+
+const FeedPost = ({date, desc, img, boxshadow, comments}) => {
     return <Container boxshadow = {boxshadow}>
 
         <Box>
@@ -70,12 +83,14 @@ const FeedPost = ({date, desc, img, boxshadow}) => {
         </TopSection>
 
         <Photo src={img} />
-        
         <Description> {desc} </Description>
 
         <BottomSection>
-            <Like />
-            <Comment />
+        <Like />
+        <Comment>
+            <Link to="/ViewComments" style={{ textDecoration: 'none'}}>
+            <CommentIcon src="/chatbox.png"/> </Link>  {comments} 
+        </Comment>
         </BottomSection>
         </Box>
 
@@ -85,8 +100,9 @@ const FeedPost = ({date, desc, img, boxshadow}) => {
 FeedPost.defaultProps ={
 date: "00/00/2021",
 desc: "this is a description",
-img: null,
-boxshadow: "",
+img: "https://www.thespruce.com/thmb/oxE3VdaeQdrW8GT6ZEsQvpdVhNQ=/2000x2000/smart/filters:no_upscale()/spider-plants-chlorophytum-definition-1902773-02-4fc579ee1b874f4ca148482782d163b6.jpg",
+boxshadow: "1px 1px 10px #C4C4C4",
+comments: "00"
 }
 
 export default FeedPost;

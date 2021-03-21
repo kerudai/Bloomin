@@ -6,10 +6,11 @@ display: flex;
 flex-direction: row;
 align-items: center;
 justify-content: center;
+margin: 10px;
 `;
 
 const Input = styled.input`
-width: 200px;
+width: 173px;
 height: 10px;
 border-radius: 10px;
 border: 2px solid #DADADA;

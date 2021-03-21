@@ -9,8 +9,8 @@ import UserComment from 'comps/UserComment';
 
 const Container = styled.div`
 background-color: #F5F5F5;
-min-height: 100vh;
-max-height: 100vh;
+// min-height: 100vh;
+// max-height: 100vh;
 min-width: 100vw;
 max-width: 100vw;
 `;
@@ -33,9 +33,8 @@ const ViewComments = () => {
     <Spacer />
     <div className="viewcom">
     <Content>
-    <FeedPost />
+    <FeedPost boxshadow=""/>
     <CommentInput />
-    <UserComment />
     <UserComment />
     </Content>
     </div>
