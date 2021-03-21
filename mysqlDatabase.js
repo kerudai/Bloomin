@@ -16,7 +16,7 @@ const connection = mysql.createConnection(dbDetails)
 function allTasks(callback) {
     const query = `
       SELECT * 
-      FROM users
+      FROM Users
     `
     connection.query(query, null, (error, results, fields) => {
       callback(error, results)
@@ -26,7 +26,7 @@ exports.allTasks = allTasks
 
 function createTask(user, callback) {
     const query = `
-      INSERT INTO users (FirstName, LastName, Email, Password, UserName, Birthday, FavoritePlant)
+      INSERT INTO Users (FirstName, LastName, Email, Password, UserName, Birthday, FavoritePlant)
       VALUES (?, ?, ?, ?, ?, ?, ?)
     `
     const params = [user.FirstName, user.LastName, user.Email, user.Password, user.UserName, user.Birthday, user.FavoritePlant]
@@ -37,12 +37,51 @@ function createTask(user, callback) {
   }  
 exports.createTask = createTask
 
-function deleteTask(taskId) {
+function deleteTask(userId, callback) {
+  let query = `
+  DELETE FROM Users WHERE id = ?
+  `
 
+  let params = [userId, callback]
+
+  connection.query(query, params, (error, result) => {
+    console.log(error, result)
+    callback(error, result)
+  })
 }
 exports.deleteTask = deleteTask
 
-function completeTask(taskId, data) {
+function updateTask(id, data, callback) {
+  let params = []
+  let query = `
+    UPDATE Users
+    SET 
+    `
+  if (data.FirstName) {
+    query += `FirstName = ?`
+    params.push(data.FirstName)
+  }
+  if (data.LastName) {
+    if (params.length > 0) {
+      query += `,`
+    }
+    query += `LastName = ?`
+    params.push(data.LastName)
+  }
+    `
+    WHERE id = ?
+  `
+  // SET LastName = ?
+  //   SET Email = ?
+  //   SET Password = ?
+  //   SET UserName = ?
+  //   SET Birthday = ?
+  //   SET FavoritePlant = ?
+  params.push(id)
 
+  connection.query(query, params, (error, result) => {
+    console.log(error, result)
+    callback(error, result)
+  })
 }
-exports.completeTask = completeTask
+exports.updateTask = updateTask

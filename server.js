@@ -38,17 +38,42 @@ app.post('/api/tasks', (req, res) => {
 
 
 app.delete('/api/tasks/:id', (req, res) => {
-const taskId = parseInt(req.params.id)
-const result = database.deleteTask(taskId)
-res.send(result) 
+const id = req.params.id
+database.deleteTask(id, (error, result) => {
+  if (error) {
+    res.send({error})
+    return
+  } 
+  res.send({result})  
 })
+})
+// app.delete('/api/tasks/:id', (req, res) => {
+// const taskId = parseInt(req.params.id)
+// const result = database.deleteTask(taskId)
+// res.send(result) 
+// })
 
+app.use(express.json())
 app.patch('/api/tasks/:id', (req, res) => {
-const taskId = parseInt(req.params.id) 
-const data = req.body 
-const result = database.updateTask(taskId, data)
-res.send(result) 
+  const id = req.params.id
+  const userData = req.body
+
+  database.updateTask(id, userData, (error, result) => {
+    if (error) {
+      res.send({error})
+      return
+    } 
+    res.send({result})  
+  })
+  // console.log(id, userData)
+  // res.send(userData)  
 })
+// app.patch('/api/tasks/:id', (req, res) => {
+// const taskId = parseInt(req.params.id) 
+// const data = req.body 
+// const result = database.updateTask(taskId, data)
+// res.send(result) 
+// })
   
   
   
