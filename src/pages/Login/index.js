@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import {Link} from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+import axios from 'axios';
 import styled from 'styled-components';
 import Button from 'comps/Button';
 import Input from 'comps/Input';
@@ -16,25 +17,44 @@ background-color: #F5F5F5;
 `;
 
 const Text = styled.div`
-    cursor: pointer;
-    text-align: center;
-    margin-top: 20px;
-    font-size: 18px;
-    text-transform: uppercase;
-    text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+  text-transform: uppercase;
+  text-decoration: none;
 
-    &:hover {
-      color: #6d8a6d;
-    }
+  &:hover {
+    color: #6d8a6d;
+  }
 `;
 
-const Login = ({createAccount}) => {
+const Login = ({ createAccount }) => {
+
+  const history = useHistory();
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
+
+  const HandleLogin = async () => {
+    const resp = await axios.post("URL_HERE", { email: email, password: password });
+    console.log(resp);
+    if (resp.data !== "Error: incorrect credentials.") {
+      const token = resp.data;
+      sessionStorage.setItem("token", token);
+      axios.defaults.headers.common['Authorization'] = token;
+      history.push("/");
+    } else {
+      setError("Error: incorrect credentials.")
+    }
+  }
 
   return <Container>
-    <Logo/>
-    <Input inputhead="Email" placeholder="Email"/>
-    <Input inputhead="Password" placeholder="Password"/>
-    <Link to="/Feed" style={{ textDecoration: 'none'}}><Button buttontext="Log in"/></Link>
+    <Logo />
+    <Input inputhead="Email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
+    <Input inputhead="Password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
+    <Button buttontext="Log in" onClick={HandleLogin}/>
     <Link to="/Register" style={{ textDecoration: 'none', color: '#000000' }} ><Text onClick={createAccount}>Create Account</Text></Link>
   </Container>
 }
