@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link, useHistory } from 'react-router-dom';
 
 const Container = styled.div`
 display:flex;
@@ -14,17 +15,11 @@ margin:5px;
 height:15px;
 `;
 
-// function checkCom(){
-//     if(true){
-        
-//     }
-// }
-
 const Comment = ({comments}) => {
     return <Container>
-        <ChatBox src="/comment.png" 
-        // onClick={()=>{ checkCom(); }}
-        /> 
+        <Link to="/ViewComments" style={{ textDecoration: 'none'}}>
+        <ChatBox src="/comment.png" /> 
+        </Link>
         {comments}
     </Container>
 }
