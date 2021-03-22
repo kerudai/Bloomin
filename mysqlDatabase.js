@@ -70,9 +70,10 @@ function updateUser(id, data, callback) {
     query += `LastName = ?`
     params.push(data.LastName)
   }
-    `
+  query += `
     WHERE id = ?
   `
+  console.log(query);
   // SET LastName = ?
   //   SET Email = ?
   //   SET Password = ?
