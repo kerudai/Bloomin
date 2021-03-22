@@ -6,21 +6,21 @@ import FeedPost from 'comps/FeedPost';
 import Spacer from 'comps/Spacer';
 import Button from 'comps/Button';
 
-import axios from 'axios';
+// import axios from 'axios';
 
-const [posts, setPosts] = useState([])
-const HandleGetAllPosts = async (keyword, name) => {
+// const [posts, setPosts] = useState([])
+// const HandleGetAllPosts = async (keyword, name) => {
   
-  var resp = await axios.post("heroku link here", {
-  token:"secrettoken",
-  keyword:keyword,
-  name:name
-});
+//   var resp = await axios.post("heroku link here", {
+//   token:"secrettoken",
+//   keyword:keyword,
+//   name:name
+// });
 
-console.log(resp);
-setPosts([...resp.date]);
+// console.log(resp);
+// setPosts([...resp.date]);
 
-}
+// }
 
 const Container = styled.div`
 // padding-top: 85px;
@@ -38,7 +38,8 @@ const Feed = () => {
     <Tophead/>
     <Spacer/>
     <div className="feed">
-
+    <FeedPost />
+{/* 
     <Button buttontext="Get All Posts" onClick={HandleGetAllPosts} />
     
     {
@@ -52,7 +53,7 @@ const Feed = () => {
     comments={o.comments}
     />
   })
-  }
+  } */}
 
     </div>
     <Spacer/>
