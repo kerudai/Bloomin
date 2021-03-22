@@ -44,7 +44,7 @@ const Feed = () => {
     //7. retrieve data
     console.log("get message", resp);
     //8. update state
-    setMsgs([resp.data.users[0]]);
+    setMsgs(resp.data.users);
 }
 
 //Birth Life Cycle;commonly used
