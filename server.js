@@ -4,9 +4,9 @@ const database = require('./mysqlDatabase')
 const app = express() 
 app.use(express.json())
 
-app.get('/api/tasks', (req, res) => {
+app.get('/api/users', (req, res) => {
   // 1
-  database.allTasks((error, users) => {
+  database.allUsers((error, users) => {
     // 2
     if (error) {
       res.send({error})
@@ -17,10 +17,10 @@ app.get('/api/tasks', (req, res) => {
   })
 })
 
-app.post('/api/tasks', (req, res) => {
+app.post('/api/users', (req, res) => {
   const user = req.body
   // 1
-  database.createTask(user, (error, userId) => {
+  database.createUser(user, (error, userId) => {
     
     // 2
     if (error) {
@@ -37,9 +37,9 @@ app.post('/api/tasks', (req, res) => {
 })
 
 
-app.delete('/api/tasks/:id', (req, res) => {
+app.delete('/api/users/:id', (req, res) => {
 const id = req.params.id
-database.deleteTask(id, (error, result) => {
+database.deleteUser(id, (error, result) => {
   if (error) {
     res.send({error})
     return
@@ -54,11 +54,11 @@ database.deleteTask(id, (error, result) => {
 // })
 
 app.use(express.json())
-app.patch('/api/tasks/:id', (req, res) => {
+app.patch('/api/users/:id', (req, res) => {
   const id = req.params.id
   const userData = req.body
 
-  database.updateTask(id, userData, (error, result) => {
+  database.updateUser(id, userData, (error, result) => {
     if (error) {
       res.send({error})
       return
