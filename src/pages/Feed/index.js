@@ -5,8 +5,9 @@ import Tophead from 'comps/Tophead';
 import FeedPost from 'comps/FeedPost';
 import Spacer from 'comps/Spacer';
 import Button from 'comps/Button';
+import Messages from 'comps/Messages';
+import axios from 'axios';
 
-// import axios from 'axios';
 
 // const [posts, setPosts] = useState([])
 // const HandleGetAllPosts = async (keyword, name) => {
@@ -34,6 +35,25 @@ max-width: 100vw;
 
 const Feed = () => {
 
+  const [msgs, setMsgs] = useState([]);
+  const GetMsgs = async () =>{
+    //axios promise - connect
+    //retrieve
+    //6. Handler function does the first connection, makes call and connects
+    var resp = await axios.get("http://localhost:8080/api/users");
+    //7. retrieve data
+    console.log("get message", resp);
+    //8. update state
+    setMsgs([resp.data.users[0]]);
+}
+
+//Birth Life Cycle;commonly used
+useEffect(()=>{
+    // alert("Birth Life Cycle for useEffect");
+    //2. Interaction - when the page loads
+    GetMsgs();
+}, []);
+
   return <Container>
     <Tophead/>
     <Spacer/>
@@ -54,7 +74,7 @@ const Feed = () => {
     />
   })
   } */}
-
+      <Messages msgs={msgs}/>
     </div>
     <Spacer/>
     <Footer/>
