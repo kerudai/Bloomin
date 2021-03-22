@@ -20,7 +20,7 @@ width: 280px;
 justify-content: space-between;
 `;
 
-const BottomSection  = styled.div`
+const BottomSection = styled.div`
 display: flex;
 flex-direction: row;
 width: 280px;
@@ -29,20 +29,20 @@ justify-content: flex-start;
 margin: 10px;
 `;
 
-const UserComment = ({date, comment}) => {
+const UserComment = ({ date, comment }) => {
     return <Container>
         <TopSection>
-        <Icon width="8px" height="8px"/>
-        {date}
+            <Icon width="8px" height="8px" />
+            {date}
         </TopSection>
 
-       <BottomSection> {comment} </BottomSection>
+        <BottomSection> {comment} </BottomSection>
     </Container>
 }
 
-UserComment.defaultProps ={
-date: "00/00/2021",
-comment: "this is a comment"
+UserComment.defaultProps = {
+    date: "00/00/2021",
+    comment: "this is a comment"
 }
 
 export default UserComment;

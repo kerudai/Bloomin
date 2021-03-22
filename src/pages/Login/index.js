@@ -29,7 +29,7 @@ const Text = styled.div`
   }
 `;
 
-const Login = ({ createAccount }) => {
+const Login = () => {
 
   const history = useHistory();
 
@@ -55,7 +55,7 @@ const Login = ({ createAccount }) => {
     <Input inputhead="Email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
     <Input inputhead="Password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
     <Button buttontext="Log in" onClick={HandleLogin}/>
-    <Link to="/Register" style={{ textDecoration: 'none', color: '#000000' }} ><Text onClick={createAccount}>Create Account</Text></Link>
+    <Link to="/Register" style={{ textDecoration: 'none', color: '#000000' }} ><Text>Create Account</Text></Link>
   </Container>
 }
 

@@ -8,7 +8,7 @@ import FeedPost from 'comps/FeedPost';
 import Spacer from 'comps/Spacer';
 
 const Container = styled.div`
-// padding-top: 75px;
+padding-bottom: 105px;
 background-color: #F5F5F5;
 min-height: 100vh;
 max-height: 100vh;

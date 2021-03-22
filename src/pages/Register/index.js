@@ -8,6 +8,8 @@ import {Link} from 'react-router-dom';
 
 const Register = () => {
 
+  
+
   return <div className="registerCont">
     <Link to="/" style={{ textDecoration: 'none'}}><img src={backIcon} style={{
       width:30,
