@@ -13,7 +13,7 @@ const connection = mysql.createConnection(dbDetails)
 //host for '%'? instead of 'localhost'?
 
 // 3
-function allTasks(callback) {
+function allUsers(callback) {
     const query = `
       SELECT * 
       FROM Users
@@ -21,10 +21,11 @@ function allTasks(callback) {
     connection.query(query, null, (error, results, fields) => {
       callback(error, results)
     })
+    console.log("get users", allUsers);
   }
-exports.allTasks = allTasks
+exports.allUsers = allUsers
 
-function createTask(user, callback) {
+function createUser(user, callback) {
     const query = `
       INSERT INTO Users (FirstName, LastName, Email, Password, UserName, Birthday, FavoritePlant)
       VALUES (?, ?, ?, ?, ?, ?, ?)
@@ -33,11 +34,11 @@ function createTask(user, callback) {
     connection.query(query, params, function (error, result, fields) {
       callback(error, result)
     })
-    console.log("post message", createTask);
+    console.log("create an user", createUser);
   }  
-exports.createTask = createTask
+exports.createUser = createUser
 
-function deleteTask(userId, callback) {
+function deleteUser(userId, callback) {
   let query = `
   DELETE FROM Users WHERE id = ?
   `
@@ -48,10 +49,11 @@ function deleteTask(userId, callback) {
     console.log(error, result)
     callback(error, result)
   })
+  console.log("delete a user", deleteUser);
 }
-exports.deleteTask = deleteTask
+exports.deleteUser = deleteUser
 
-function updateTask(id, data, callback) {
+function updateUser(id, data, callback) {
   let params = []
   let query = `
     UPDATE Users
@@ -83,5 +85,6 @@ function updateTask(id, data, callback) {
     console.log(error, result)
     callback(error, result)
   })
+  console.log("update an user", updateUser);
 }
-exports.updateTask = updateTask
+exports.updateUser = updateUser
