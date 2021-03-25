@@ -80,11 +80,11 @@ height:15px;
 
 const fakedb = [
 {
-    userID: "bob",
+    UserID: "bob",
     PostDate: "01/01/2017",
     desc: "hello hi hey",
     PhotoUrl: "https://www.thespruce.com/thmb/oxE3VdaeQdrW8GT6ZEsQvpdVhNQ=/2000x2000/smart/filters:no_upscale()/spider-plants-chlorophytum-definition-1902773-02-4fc579ee1b874f4ca148482782d163b6.jpg",
-    comments: 12,
+    CommentNumber: 12,
 }
 ]
 
@@ -114,7 +114,7 @@ const FeedPost = ({date, desc, img, boxshadow, comments,posts}) => {
 
          <Box>
         <TopSection>
-        <Icon username={o.userID}/>
+        <Icon username={o.UserID}/>
         {o.PostDate}
         </TopSection>
 
@@ -125,7 +125,7 @@ const FeedPost = ({date, desc, img, boxshadow, comments,posts}) => {
         <Like />
         <Comment>
             <Link to="/ViewComments" style={{ textDecoration: 'none'}}>
-            <CommentIcon src="/chatbox.png"/> </Link>  {o.comments} 
+            <CommentIcon src="/chatbox.png"/> </Link>  {o.CommentNumber} 
         </Comment>
         </BottomSection>
         </Box>
