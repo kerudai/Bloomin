@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -38,17 +38,27 @@ const Text = styled.div`
   text-transform: uppercase;
 `;
 
-const CommentInput = ({onClick}) => {
+const CommentInput = ({onClick, onFormComplete}) => {
+    
+    const [comm, setComm] = useState("");
+
     return <Container>
-<Input placeholder="Comment..." />
-<Post onClick={onClick}>
-    <Text>Post</Text>
-</Post>
+
+    <Input type="text" placeholder="Comment..." onChange={(e => {
+        setComm(e.target.value);
+    })} />
+
+    <Post onClick={()=>{
+        onFormComplete(comm) }
+        }>
+        <Text>Post</Text>
+    </Post>
+
     </Container>
 }
 
 CommentInput.defaultProps = {
-    onClick: () => { },
+  
 }
 
 export default CommentInput;
