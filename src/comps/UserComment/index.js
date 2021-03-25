@@ -39,7 +39,7 @@ margin: 10px;
 
 const fakedb = [
     {   
-        userID: "Tina",
+        UserID: "Tina",
         CommentDate: "03/25/2021",
         CommentContent: "la la di da doo"
     }
@@ -51,7 +51,7 @@ const UserComment = ({date, comment, comments}) => {
        {comments.map(o=><Info>
        
         <TopSection>
-        <Icon width="8px" height="8px" userID={o.username}/>
+        <Icon width="8px" height="8px" username={o.UserID}/>
         {o.CommentDate}
         </TopSection> 
 
