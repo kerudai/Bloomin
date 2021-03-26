@@ -41,7 +41,7 @@ const ViewComments = () => {
     }
     
     const HandleFormComplete = async(comm) =>{
-        var resp = await axios.post("https://bloominuserdb.herokuapp.com/api/comments", {CommentContent: comm, postID:postID});
+        var resp = await axios.post("https://bloominuserdb.herokuapp.com/api/comments", {CommentContent: comm, postID:parseInt(postID)});
         console.log("post comments", resp);
         GetComments()
     }
@@ -57,7 +57,7 @@ const ViewComments = () => {
     <Content>
     <FeedPost boxshadow=""/>
    
-    {
+    {/* {
     comments.map((o, i)=>{
         console.log("inside the array...", o,i);
         return <>
@@ -66,7 +66,7 @@ const ViewComments = () => {
             comment={o.comment}/>
         </>
     })
-    }
+    } */}
 
     <CommentInput onFormComplete={HandleFormComplete}/>
     <UserComment comments={comments}/>
