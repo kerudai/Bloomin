@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useParams } from "react-router-dom";
 import styled from 'styled-components';
 import Footer from 'comps/Footer';
 import Tophead from 'comps/Tophead';
@@ -27,19 +28,20 @@ background-color: #fff;
 box-shadow: 1px 1px 10px #C4C4C4;
 `;
 
-
+// url localhost:3000/viewcomment/5
 const ViewComments = () => {
 
+    const {postID} = useParams();
     const [comments, setComm] = useState([])
     
     const GetComments = async () => {
-        var resp = await axios.get("https://bloominuserdb.herokuapp.com/api/comments");
+        var resp = await axios.get("https://bloominuserdb.herokuapp.com/api/comments/"+postID);
         console.log("get comments", resp);
         setComm(resp.data.comments);
     }
     
     const HandleFormComplete = async(comm) =>{
-        var resp = await axios.post("https://bloominuserdb.herokuapp.com/api/comments", {CommentContent: comm});
+        var resp = await axios.post("https://bloominuserdb.herokuapp.com/api/comments", {CommentContent: comm, postID:postID});
         console.log("post comments", resp);
         GetComments()
     }
@@ -55,14 +57,16 @@ const ViewComments = () => {
     <Content>
     <FeedPost boxshadow=""/>
    
-    {/* {
+    {
     comments.map((o, i)=>{
         console.log("inside the array...", o,i);
+        return <>
+            <CommentInput onClick={GetComments} id={o.PostID}/>
+            <UserComment date={o.date}
+            comment={o.comment}/>
+        </>
     })
-    <CommentInput onClick={HandleGetAllComments}/>
-    <UserComment date={o.date}
-    comment={o.comment}/>
-    } */}
+    }
 
     <CommentInput onFormComplete={HandleFormComplete}/>
     <UserComment comments={comments}/>

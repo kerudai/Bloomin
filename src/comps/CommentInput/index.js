@@ -38,7 +38,7 @@ const Text = styled.div`
   text-transform: uppercase;
 `;
 
-const CommentInput = ({onClick, onFormComplete}) => {
+const CommentInput = ({id, onClick, onFormComplete}) => {
     
     const [comm, setComm] = useState("");
 
@@ -49,7 +49,7 @@ const CommentInput = ({onClick, onFormComplete}) => {
     }} />
 
     <Post onClick={()=>{
-        onFormComplete(comm) }
+        onFormComplete(comm, id) }
         }>
         <Text>Post</Text>
     </Post>

@@ -28,7 +28,7 @@ function App() {
           <Route path="/ProfileEdit" component={ProfileEdit} />
           <Route path="/Posting" component={Posting} />
           <Route path="/Uploaded" component={Uploaded} />
-          <Route path="/ViewComments" component={ViewComments} />
+          <Route path="/ViewComments/:postID" component={ViewComments} />
         </Switch>
       </Router>
     </div>
