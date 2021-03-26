@@ -9,6 +9,13 @@ display: flex;
 align-items: center;
 justify-content: center;
 flex-direction:column;
+`;
+
+const Wrapper = styled.div`
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction:column;
 width: 350px;
 min-height: 100px;
 max-height: 395px;
@@ -71,12 +78,23 @@ margin:5px;
 height:15px;
 `;
 
+const fakedb = [
+{
+    UserID: "bob",
+    PostDate: "01/01/2017",
+    desc: "hello hi hey",
+    PhotoUrl: "https://www.thespruce.com/thmb/oxE3VdaeQdrW8GT6ZEsQvpdVhNQ=/2000x2000/smart/filters:no_upscale()/spider-plants-chlorophytum-definition-1902773-02-4fc579ee1b874f4ca148482782d163b6.jpg",
+    CommentNumber: 12,
+}
+]
 
 
-const FeedPost = ({date, desc, img, boxshadow, comments}) => {
-    return <Container boxshadow = {boxshadow}>
+const FeedPost = ({date, desc, img, boxshadow, comments,posts}) => {
+    return  <Container>
+    
+    {posts.map(o=><Wrapper boxshadow = {boxshadow}>
 
-        <Box>
+        {/* <Box>
         <TopSection>
         <Icon />
         {date}
@@ -92,17 +110,37 @@ const FeedPost = ({date, desc, img, boxshadow, comments}) => {
             <CommentIcon src="/chatbox.png"/> </Link>  {comments} 
         </Comment>
         </BottomSection>
+        </Box> */}
+
+         <Box>
+        <TopSection>
+        <Icon username={o.UserID}/>
+        {o.PostDate}
+        </TopSection>
+
+        <Photo src={o.PhotoUrl} />
+        <Description> {o.desc} </Description>
+
+        <BottomSection>
+        <Like />
+        <Comment>
+            <Link to="/ViewComments" style={{ textDecoration: 'none'}}>
+            <CommentIcon src="/chatbox.png"/> </Link>  {o.CommentNumber} 
+        </Comment>
+        </BottomSection>
         </Box>
 
+    </Wrapper> )}
     </Container>
 }
 
 FeedPost.defaultProps ={
-date: "00/00/2021",
-desc: "this is a description",
-img: "https://www.thespruce.com/thmb/oxE3VdaeQdrW8GT6ZEsQvpdVhNQ=/2000x2000/smart/filters:no_upscale()/spider-plants-chlorophytum-definition-1902773-02-4fc579ee1b874f4ca148482782d163b6.jpg",
-boxshadow: "1px 1px 10px #C4C4C4",
-comments: "00"
+// date: "00/00/2021",
+// desc: "this is a description",
+// img: "https://www.thespruce.com/thmb/oxE3VdaeQdrW8GT6ZEsQvpdVhNQ=/2000x2000/smart/filters:no_upscale()/spider-plants-chlorophytum-definition-1902773-02-4fc579ee1b874f4ca148482782d163b6.jpg",
+// boxshadow: "1px 1px 10px #C4C4C4",
+// comments: "00"
+posts: fakedb,
 }
 
 export default FeedPost;

@@ -70,15 +70,10 @@ function updateUser(id, data, callback) {
     query += `LastName = ?`
     params.push(data.LastName)
   }
-    `
+  query += `
     WHERE id = ?
   `
-  // SET LastName = ?
-  //   SET Email = ?
-  //   SET Password = ?
-  //   SET UserName = ?
-  //   SET Birthday = ?
-  //   SET FavoritePlant = ?
+  console.log(query);
   params.push(id)
 
   connection.query(query, params, (error, result) => {

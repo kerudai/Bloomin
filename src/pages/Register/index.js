@@ -36,20 +36,9 @@ const Register = () => {
       <Input inputhead="Email" placeholder="Email"/>
       <Input inputhead="Password" placeholder="Password"/>
       <Input inputhead="Username" placeholder="Username"/>
-
-      <div className="birthday" style={{
-        display:"flex",
-        alignContent:"baseline",
-        marginBottom:20
-      }}>
-
-        <div className="birthdayInput"><Input inputhead="Birthday" placeholder="MM" width="60px"/><div className="birthdayText">MM</div></div>
-
-        <div className="birthdayInput"><Input color="#F5F5F5" placeholder="DD" width="60px"/><div className="birthdayText">DD</div></div>
-
-        <div className="birthdayInput"><Input color="#F5F5F5" placeholder="YYYY" width="110px"/><div className="birthdayText">YYYY</div></div>
+      <Input inputhead="Birthday" placeholder="YYYY-MM-DD"/>
+      
         
-      </div>
       <Input inputhead="What's Your Favorite Plant?" placeholder="Favorite plant"/>
       <Link to="/Feed" style={{ textDecoration: 'none'}}><Button buttontext="CREATE ACCOUNT"/></Link>
     </div>

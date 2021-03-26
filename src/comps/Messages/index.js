@@ -18,7 +18,7 @@ const fakedb = [
 const Messages = ({msgs}) => {
     
     return <Container>
-        Messagess
+        Messages
         {msgs.map(o=><MsgCont>
             {o.FirstName} - {o.LastName} - {o.Email} - {o.Password}- {o.UserName}- {o.Birthday}- {o.FavoritePlant}
         </MsgCont>)}

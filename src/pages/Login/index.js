@@ -33,18 +33,18 @@ const Login = () => {
 
   const history = useHistory();
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [Email, setEmail] = useState("");
+  const [Password, setPassword] = useState("");
   const [error, setError] = useState(null);
 
   const HandleLogin = async () => {
-    const resp = await axios.post("URL_HERE", { email: email, password: password });
+    const resp = await axios.post("https://bloominuserdb.herokuapp.com/api/users", { Email: Email, Password: Password });
     console.log(resp);
     if (resp.data !== "Error: incorrect credentials.") {
       const token = resp.data;
       sessionStorage.setItem("token", token);
       axios.defaults.headers.common['Authorization'] = token;
-      history.push("/");
+      history.push("/Feed");
     } else {
       setError("Error: incorrect credentials.")
     }
@@ -52,8 +52,8 @@ const Login = () => {
 
   return <Container>
     <Logo />
-    <Input inputhead="Email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
-    <Input inputhead="Password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
+    <Input type="email" inputhead="Email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
+    <Input type="password" inputhead="Password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
     <Button buttontext="Log in" onClick={HandleLogin}/>
     <Link to="/Register" style={{ textDecoration: 'none', color: '#000000' }} ><Text>Create Account</Text></Link>
   </Container>
