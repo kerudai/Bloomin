@@ -31,21 +31,22 @@ box-shadow: 1px 1px 10px #C4C4C4;
 const ViewComments = () => {
 
     const [comments, setComm] = useState([])
+    
     const GetComments = async () => {
-      
-    var resp = await axios.get("https://bloominuserdb.herokuapp.com/api/comments");
-    console.log("get comments", resp);
-    setComm(resp.data.comments);
+        var resp = await axios.get("https://bloominuserdb.herokuapp.com/api/comments");
+        console.log("get comments", resp);
+        setComm(resp.data.comments);
     }
     
+    const HandleFormComplete = async(comm) =>{
+        var resp = await axios.post("https://bloominuserdb.herokuapp.com/api/comments", {CommentContent: comm});
+        console.log("post comments", resp);
+        GetComments()
+    }
+
     useEffect(()=>{
         GetComments();
     }, []);
-
-const HandleFormComplete = (comm) =>{
-    console.log(comm);       
-}
-
 
     return <Container>
     <Tophead />
