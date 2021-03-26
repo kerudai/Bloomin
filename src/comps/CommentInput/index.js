@@ -44,9 +44,9 @@ const CommentInput = ({onClick, onFormComplete}) => {
 
     return <Container>
 
-    <Input type="text" placeholder="Comment..." onChange={(e => {
+    <Input type="text" placeholder="Comment..." onChange={(e) => {
         setComm(e.target.value);
-    })} />
+    }} />
 
     <Post onClick={()=>{
         onFormComplete(comm) }
@@ -58,7 +58,7 @@ const CommentInput = ({onClick, onFormComplete}) => {
 }
 
 CommentInput.defaultProps = {
-  
+  onFormComplete: ()=>{}
 }
 
 export default CommentInput;
