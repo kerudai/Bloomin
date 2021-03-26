@@ -6,6 +6,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import FeedPost from 'comps/FeedPost';
 import Spacer from 'comps/Spacer';
+import axios from 'axios';
 
 const Container = styled.div`
 padding-bottom: 105px;
@@ -26,13 +27,27 @@ margin-bottom: 20px;
 
 const Profile = () => {
 
+const [users, setUsers] = useState([])
+const GetUsers = async () => {
+  
+ var resp = await axios.get("https://bloominuserdb.herokuapp.com/api/users");
+ console.log("get users", resp);
+ setUsers(resp.data.users);
+
+}
+
+useEffect(()=>{
+  GetUsers();
+}, []);
+
+
   return <Container>
     <Tophead />
     <Spacer/>
     <div className="profile">
     <UserBio>
       <Avatar/>
-      <Bio />
+      <Bio userinfo={users}/>
     </UserBio>
     <FeedPost />
     <FeedPost />

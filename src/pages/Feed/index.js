@@ -60,7 +60,7 @@ useEffect(()=>{
     <Tophead/>
     <Spacer/>
     <div className="feed">
-   
+
     <FeedPost posts={posts} />
  
    {/* <Messages msgs={msgs}/>  */}

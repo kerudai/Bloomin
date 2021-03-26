@@ -40,6 +40,7 @@ const ViewComments = () => {
         setComm(resp.data.comments);
     }
     
+
     const HandleFormComplete = async(comm) =>{
         var resp = await axios.post("https://bloominuserdb.herokuapp.com/api/comments", {CommentContent: comm, postID:parseInt(postID)});
         console.log("post comments", resp);
