@@ -9,7 +9,7 @@ import Spacer from 'comps/Spacer';
 import axios from 'axios';
 
 const Container = styled.div`
-// padding-top: 75px;
+padding-bottom: 105px;
 background-color: #F5F5F5;
 min-height: 100vh;
 max-height: 100vh;

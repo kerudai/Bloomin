@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import {BrowserRouter as Router, Switch, Route,} from "react-router-dom"; 
 import './App.scss';
 import Login from 'pages/Login';
@@ -10,6 +11,10 @@ import ProfileEdit from 'pages/ProfileEdit';
 import Uploaded from 'pages/Uploaded';
 import ViewComments from 'pages/ViewComments';
 
+const token = sessionStorage.getItem("token");
+if (token) {
+  axios.defaults.headers.common['Authorization'] = token;
+}
 
 function App() {
   return (
@@ -23,7 +28,7 @@ function App() {
           <Route path="/ProfileEdit" component={ProfileEdit} />
           <Route path="/Posting" component={Posting} />
           <Route path="/Uploaded" component={Uploaded} />
-          <Route path="/ViewComments" component={ViewComments} />
+          <Route path="/ViewComments/:postID" component={ViewComments} />
         </Switch>
       </Router>
     </div>

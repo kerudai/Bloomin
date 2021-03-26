@@ -28,7 +28,7 @@ width: 280px;
 justify-content: space-between;
 `;
 
-const BottomSection  = styled.div`
+const BottomSection = styled.div`
 display: flex;
 flex-direction: row;
 width: 280px;
@@ -46,6 +46,7 @@ const fakedb = [
 ]
 
 const UserComment = ({date, comment, comments}) => {
+
     return <Container>
       
        {comments.map(o=><Info>
@@ -65,7 +66,7 @@ const UserComment = ({date, comment, comments}) => {
 UserComment.defaultProps ={
 // date: "00/00/2021",
 // comment: "this is a comment"
-comments: fakedb,
+comments: fakedb
 }
 
 export default UserComment;

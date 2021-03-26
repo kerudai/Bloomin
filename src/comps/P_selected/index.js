@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import BackIcon from 'images/back_button.png';
 import Cactus1 from 'images/cactus1.jpg';
+import Input from 'comps/Input';
 
 const Container = styled.div`
 min-width: 349px;
@@ -44,15 +45,6 @@ background-repeat: no-repeat;
 background-position: center;
 border-radius: 10px;
 `;
-const Input = styled.input`
-min-width: 283px;
-min-height: 50px;
-max-width: 283px;
-max-height: 50px;
-border-radius: 15px;
-margin: 10px;
-padding: 5px;
-`;
 
 const P_selectd = ({onBack}) =>{
     return <Container>
@@ -61,7 +53,7 @@ const P_selectd = ({onBack}) =>{
         }}/>
        <PhotosInput>
            <Photo />
-           <Input type="text" placeholder="Write a message..."/>
+           <Input inputhead="" placeholder="Write a message..."/>
        </PhotosInput>
     </Container>
 };

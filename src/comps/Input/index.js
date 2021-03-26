@@ -37,18 +37,19 @@ text-indent: 10px;
 outline: transparent;
 `;
 
-const Input = ({inputhead,placeholder, width, color}) => {
+const Input = ({inputhead,placeholder, width, color, type}) => {
   return <InputCont>
     <InputText color={color}>
         {inputhead}
     </InputText>
-    <InputBox placeholder={placeholder} width={width}/>
+    <InputBox type={type} placeholder={placeholder} width={width}/>
   </InputCont>
 }
 
 Input.defaultProps = {
     placeholder: "Default",
-    inputhead: "Default"
+    inputhead: "Default",
+    type: "text"
 }
 
 export default Input;
