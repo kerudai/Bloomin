@@ -46,7 +46,7 @@ const CommentInput = ({onClick, onFormComplete}) => {
 
     <Input type="text" placeholder="Comment..." onChange={(e) => {
         setComm(e.target.value);
-    }} />
+    }} value={comm}/>
 
     <Post onClick={()=>{
         onFormComplete(comm) }
