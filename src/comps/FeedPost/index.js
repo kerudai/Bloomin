@@ -82,7 +82,8 @@ const fakedb = [
 {
     UserID: "bob",
     PostDate: "01/01/2017",
-    desc: "hello hi hey",
+    PhotoCaption: "hello hi hey",
+    PhotoID: "https://images.pexels.com/photos/5413991/pexels-photo-5413991.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
     PhotoUrl: "https://www.thespruce.com/thmb/oxE3VdaeQdrW8GT6ZEsQvpdVhNQ=/2000x2000/smart/filters:no_upscale()/spider-plants-chlorophytum-definition-1902773-02-4fc579ee1b874f4ca148482782d163b6.jpg",
     CommentNumber: 12,
 }
@@ -114,12 +115,12 @@ const FeedPost = ({date, desc, img, boxshadow, comments,posts}) => {
 
          <Box>
         <TopSection>
-        <Icon username={o.UserID}/>
+        <Icon username={o.UserID} avatarsrc={o.PhotoID}/>
         {o.PostDate}
         </TopSection>
 
         <Photo src={o.PhotoUrl} />
-        <Description> {o.desc} </Description>
+        <Description> {o.PhotoCaption} </Description>
 
         <BottomSection>
         <Like />
@@ -138,7 +139,7 @@ FeedPost.defaultProps ={
 // date: "00/00/2021",
 // desc: "this is a description",
 // img: "https://www.thespruce.com/thmb/oxE3VdaeQdrW8GT6ZEsQvpdVhNQ=/2000x2000/smart/filters:no_upscale()/spider-plants-chlorophytum-definition-1902773-02-4fc579ee1b874f4ca148482782d163b6.jpg",
-// boxshadow: "1px 1px 10px #C4C4C4",
+boxshadow: "1px 1px 10px #C4C4C4",
 // comments: "00"
 posts: fakedb,
 }

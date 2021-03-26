@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import leaficon from '../../images/small_leaf.png';
 
+const Container = styled.div`
+`;
 
 const BioCont = styled.div`
 color: #000000;
@@ -49,28 +51,45 @@ align-items:center;
  }
 `;
 
-const Bio = ({name, id, desc, fav}) => {
-  return <BioCont>
+const fakedb = [
+    {
+        FirstName: "Linda",
+        LastName: "Jones",
+        Email: "123@mail.com",
+        Pass: "1234",
+        Username: "linda123",
+        Birthday: "1998-12-01",
+        FavoritePlant: "Tulips",
+        Bio: "Plants make me happy. Join me on my plant-loving journey. 😊🌱",
+    }
+]
+
+
+const Bio = ({name, id, desc, fav, userinfo}) => {
+  return <Container>
+ {userinfo.map(o=> <BioCont>
       <BioName>
-          {name}
+          {o.FirstName} {o.LastName}
       </BioName>
       <BioId>
-          {id}
+          {o.Username}
       </BioId>
       <BioDesc>
-          {desc}
+          {o.Bio}
       </BioDesc>
       <BioFav>
-          <img src ={leaficon}/>Favourite Plant: {fav}
+          <img src ={leaficon}/>Favourite Plant: {o.FavoritePlant}
       </BioFav>
-  </BioCont>
+  </BioCont> )}
+  </Container>
 }
 
 Bio.defaultProps = {
-    name: "Linda Jones",
-    id: "@linda2256",
-    desc: "Plants make me happy. Join me on my plant-loving journey. 😊🌱",
-    fav: "Tulips"
+    // name: "Linda Jones",
+    // id: "@linda2256",
+    // desc: "Plants make me happy. Join me on my plant-loving journey. 😊🌱",
+    // fav: "Tulips",
+    userinfo: fakedb
 }
 
 export default Bio;
