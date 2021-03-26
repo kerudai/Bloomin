@@ -43,7 +43,7 @@ align-items:center;
 
 `;
 
-const Tophead = ({ }) => {
+const Tophead = ({}) => {
 
     const history = useHistory()
 
@@ -52,14 +52,15 @@ const Tophead = ({ }) => {
     }
 
     return <TopHeadCont>
-        <img src={backicon} className="back" onClick={goBack} />
+        <img src={backicon} className="back" onClick={()=>{
+            goBack()}} />
         <img src={logo} className="headerlogo" />
         <Link to="/ProfileEdit" style={{ textDecoration: 'none'}}><img src={setting} className="setting" /></Link>
     </TopHeadCont>
 }
 
 Tophead.defaultProps = {
-
+goBack: ()=>{}
 }
 
 export default Tophead;

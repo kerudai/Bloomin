@@ -30,7 +30,7 @@ box-shadow: 1px 1px 10px #C4C4C4;
 
 const ViewComments = () => {
 
-    const [comments, setComm] = useState([])
+    const [comments, setComm] = useState([]);
     
     const GetComments = async () => {
         var resp = await axios.get("https://bloominuserdb.herokuapp.com/api/comments");
@@ -38,7 +38,7 @@ const ViewComments = () => {
         setComm(resp.data.comments);
     }
     
-    const HandleFormComplete = async(comm) =>{
+    const HandleFormComplete = async (comm) =>{
         var resp = await axios.post("https://bloominuserdb.herokuapp.com/api/comments", {CommentContent: comm});
         console.log("post comments", resp);
         GetComments()
