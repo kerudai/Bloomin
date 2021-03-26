@@ -9,6 +9,12 @@ const Container = styled.img`
   border-radius: 100%;
 `;
 
+const fakedb = [
+  {
+    
+  }
+]
+
 const Avatar = ({ avatarsrc , border , width , height }) => {
   return <Container src={avatarsrc} border={border} width={width} height={height}>
   </Container>
