@@ -8,7 +8,18 @@ import {Link} from 'react-router-dom';
 
 const Register = () => {
 
-  
+//   const [newUser, setNewUsers] = useState([])
+//   const GetUsers = async () => {
+    
+//   var resp = await axios.get("https://bloominuserdb.herokuapp.com/api/users");
+//   console.log("get users", resp);
+//   setPosts(resp.data.users);
+
+//   }
+
+//   useEffect(()=>{
+//     GetUsers();
+//   }, []);  
 
   return <div className="registerCont">
     <Link to="/" style={{ textDecoration: 'none'}}><img src={backIcon} style={{
@@ -19,16 +30,19 @@ const Register = () => {
       marginLeft:20,
       cursor: "pointer",
     }}/></Link>
+
     <div className="InputCont" style={{
       display:"flex",
       flexDirection:"column",
       alignItems:"center"
     }}>
+
       <div className="RegisterHeadText" style={{
         marginBottom:20,
         marginTop:10
       }}>
-        <Header headtext="Register"/>
+
+      <Header headtext="Register"/>
       </div>
 
       <Input inputhead="First Name" placeholder="First Name"/>
