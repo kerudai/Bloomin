@@ -5,21 +5,23 @@ import Input from '../../comps/Input';
 import backIcon from 'images/back.png';
 import './register.scss';
 import {Link} from 'react-router-dom';
+import axios from 'axios';
 
 const Register = () => {
 
-//   const [newUser, setNewUsers] = useState([])
-//   const GetUsers = async () => {
-    
-//   var resp = await axios.get("https://bloominuserdb.herokuapp.com/api/users");
-//   console.log("get users", resp);
-//   setPosts(resp.data.users);
+const [first, setFirst] = useState("");
+const [last, setLast] = useState("");
+const [email, setEmail] =  useState("");
+const [pass, setPass] =  useState("");
+const [username, setUsername] =  useState("");
+const [birthday, setBirthday] =  useState("");
+const [favoriteplant, setFavoritePlant] =  useState("");
 
-//   }
+const HandleFormComplete = async(first,last,email,pass,username,birthday,favoriteplant) =>{
+  var resp = await axios.post("https://bloominuserdb.herokuapp.com/api/comments")
+  console.log("post new user", resp);
+}
 
-//   useEffect(()=>{
-//     GetUsers();
-//   }, []);  
 
   return <div className="registerCont">
     <Link to="/" style={{ textDecoration: 'none'}}><img src={backIcon} style={{
@@ -45,16 +47,31 @@ const Register = () => {
       <Header headtext="Register"/>
       </div>
 
-      <Input inputhead="First Name" placeholder="First Name"/>
-      <Input inputhead="Last Name" placeholder="Last Name"/>
-      <Input inputhead="Email" placeholder="Email"/>
-      <Input inputhead="Password" placeholder="Password"/>
-      <Input inputhead="Username" placeholder="Username"/>
-      <Input inputhead="Birthday" placeholder="YYYY-MM-DD"/>
+      <Input inputhead="First Name" placeholder="First Name" onChange={(e) => {
+        setFirst(e.target.value); }} value={first}/>
+
+      <Input inputhead="Last Name" placeholder="Last Name" onChange={(e) => {
+        setLast(e.target.value); }} value={last}/>
+
+      <Input inputhead="Email" placeholder="Email" onChange={(e) => {
+        setEmail(e.target.value); }} value={email}/>
+
+      <Input inputhead="Password" placeholder="Password" onChange={(e) => {
+        setPass(e.target.value); }} value={pass}/>
+
+      <Input inputhead="Username" placeholder="Username" onChange={(e) => {
+        setUsername(e.target.value); }} value={username}/>
+
+      <Input inputhead="Birthday" placeholder="YYYY-MM-DD" onChange={(e) => {
+        setBirthday(e.target.value); }} value={birthday}/>
       
         
-      <Input inputhead="What's Your Favorite Plant?" placeholder="Favorite plant"/>
-      <Link to="/Feed" style={{ textDecoration: 'none'}}><Button buttontext="CREATE ACCOUNT"/></Link>
+      <Input inputhead="What's Your Favorite Plant?" placeholder="Favorite plant" onChange={(e) => {
+        setFavoritePlant(e.target.value); }} value={favoriteplant}/>
+      
+      <Link to="/Feed" style={{ textDecoration: 'none'}}><Button buttontext="CREATE ACCOUNT" onClick={()=>{
+        HandleFormComplete(first, last, email, pass, username, birthday, favoriteplant) } }/></Link>
+
     </div>
   </div>
 }
