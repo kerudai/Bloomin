@@ -22,6 +22,20 @@ align-items: center;
 
 const Uploaded = () => {
 
+//   const [newPost, setNewPost] = useState([])
+//   const GetPosts = async () => {
+    
+//   var resp = await axios.get("https://bloominuserdb.herokuapp.com/api/posts");
+//   console.log("get posts", resp);
+//   setPosts(resp.data.posts);
+
+//   }
+
+//   useEffect(()=>{
+//     GetPosts();
+//   }, []);  
+
+
   return <Container className="main">
   <Tophead/>
   <Spacer/>

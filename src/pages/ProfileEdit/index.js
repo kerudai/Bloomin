@@ -42,6 +42,19 @@ const Text = styled.div`
 
 const ProfileEdit = () => {
 
+//   const [edit, setEdit] = useState([])
+//   const GetProfile = async () => {
+    
+//   var resp = await axios.get("https://bloominuserdb.herokuapp.com/api/users");
+//   console.log("get profile", resp);
+//   setPosts(resp.data.users);
+
+//   }
+
+//   useEffect(()=>{
+//     GetProfile();
+//   }, []);  
+
   return <Container>
     <Tophead/>
     <Spacer/>
