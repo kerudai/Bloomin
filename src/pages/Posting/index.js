@@ -12,6 +12,7 @@ const Posting = () => {
 
   const [file, setFile] = useState()
   const [description, setDescription] = useState("")
+  
   const submit = async event => {
     event.preventDefault()
     const data = new FormData()
@@ -43,12 +44,12 @@ const Posting = () => {
         <form onSubmit={submit}>
           <input
             filename={file} 
-            onChange={e => setFile(e.target.files[0])} 
+            onChange={(e) => {setFile(e.target.files[0])}} 
             type="file" 
             accept="image/*"
           ></input>
           <input
-            onChange={e => setDescription(e.target.value)} 
+            onChange={(e) => {setDescription(e.target.value)}} 
             type="text"
             placeholder="Write a message..."
           ></input> 
