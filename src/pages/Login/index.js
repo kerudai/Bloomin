@@ -7,13 +7,13 @@ import Input from 'comps/Input';
 import Logo from 'comps/Logo';
 
 const Container = styled.div`
-height: 100%;
-width: 100vw;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-background-color: #F5F5F5;
+  height: 100%;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #F5F5F5;
 `;
 
 const Text = styled.div`
@@ -37,9 +37,12 @@ const Login = () => {
   const [Pass, setPass] = useState("");
   const [error, setError] = useState(null);
 
-  const HandleLogin = async ({headers, token}) => {
+  // const Auth = async () =>{
+  //   var resp2 = await axios.get("https://bloominuserdb.herokuapp.com/login");
+  // }
 
-    const resp = await axios.post("https://bloominuserdb.herokuapp.com/api/users", { Email: Email, Pass: Pass });
+  const HandleLogin = async ({headers, token}) => {
+    var resp = await axios.post("https://bloominuserdb.herokuapp.com/login", { Email:Email, Pass:Pass });
     console.log(resp);
     if (resp.data !== "Error: incorrect credentials.") {
       sessionStorage.setItem("token", token);
