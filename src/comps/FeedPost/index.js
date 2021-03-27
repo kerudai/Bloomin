@@ -126,7 +126,7 @@ const FeedPost = ({date, desc, img, boxshadow, comments,posts}) => {
         <Like />
         <Comment>
             <Link to={"/ViewComments/"+o.id} style={{ textDecoration: 'none'}}>
-            <CommentIcon src="/chatbox.png"/> </Link>  {o.CommentNumber} 
+            <CommentIcon src="/chatbox.png"/> </Link>  
         </Comment>
         </BottomSection>
         </Box>
