@@ -14,12 +14,11 @@ const Posting = () => {
   const [description, setDescription] = useState("")
   const submit = async event => {
     event.preventDefault()
-    // Send the file and description to the server
-    const formData = new FormData()
-    formData.append("image", file)
-    formData.append("description", description)
-    const result = await axios.post('/images', formData, { headers: {'Content-Type': 'multipart/form-data'}})
-    console.log(result.data)
+    const data = new FormData()
+    data.append('image', file)
+    data.append('description', description)
+    const result = await axios.post('/photos', data)
+    console.log(result)
   }
   
   return <div className="posting">
@@ -51,7 +50,8 @@ const Posting = () => {
           <input
             onChange={e => setDescription(e.target.value)} 
             type="text"
-          ></input>
+            placeholder="Write a message..."
+          ></input> 
           <button type="submit">Submit</button>
         </form>  
 
