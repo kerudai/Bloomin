@@ -58,7 +58,7 @@ const Login = () => {
     <Logo />
     <Input type="email" inputhead="Email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
     <Input type="password" inputhead="Password" placeholder="Password" onChange={(e) => setPass(e.target.value)} />
-    <Button buttontext="Log in" onClick={HandleLogin}/>
+    <Link to="/Feed" style={{ textDecoration: 'none', color: '#000000' }} ><Button buttontext="Log in" /></Link>
     <Link to="/Register" style={{ textDecoration: 'none', color: '#000000' }} ><Text>Create Account</Text></Link>
   </Container>
 }
